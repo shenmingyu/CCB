@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CCB超帅网页</title>
+  <meta name="keywords" content="CCB超帅网页" />
+  <meta name="description" content="CCB超帅网页" />
+  <link rel="stylesheet" href="css/first.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/swiper.css">
+</head>
+
+<body>
+  <canvas id="canvas" style="background:#111"></canvas>
+  <div class="container">
+    <div class="buttons">
+      <a id="all" class="filter_controller">
+        全部
+        <img src="./images/arrow-right.png" alt="">
+      </a>
+      <a id="class1" class="filter_controller">
+        一班
+        <img src="./images/arrow-right.png" alt="">
+      </a>
+      <a id="class2" class="filter_controller">
+        二班
+        <img src="./images/arrow-right.png" alt="">
+      </a>
+      <a id="class3" class="filter_controller">
+        三班
+        <img src="./images/arrow-right.png" alt="">
+      </a>
+      <a id="class4" class="filter_controller">
+        四班
+        <img src="./images/arrow-right.png" alt="">
+      </a>
+    </div>
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="swiper-slide-img" src="./images/test1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img class="swiper-slide-img" src="./images/test2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img class="swiper-slide-img" src="./images/test3.jpg" alt="">
+        </div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+
+      <!-- 如果需要导航按钮 -->
+      <!-- <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
+
+      <!-- 如果需要滚动条 -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+
+  </div>
+</body>
+
+</html>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
+<!-- 页面跳转 -->
+<script type="text/javascript">
+  $("#all").click(function() {
+    location.href = './pages/all.html'
+  });
+  $("#class1").click(function() {
+    location.href = './pages/class1.html'
+  });
+  $("#class2").click(function() {
+    location.href = './pages/class2.html'
+  });
+  $("#class3").click(function() {
+    location.href = './pages/class3.html'
+  });
+  $("#class4").click(function() {
+    location.href = './pages/class4.html'
+  });
+</script>
+<!-- 背景 -->
+<script type="text/javascript">
+  window.onload = function() {
+    //获取画布对象
+    var canvas = document.getElementById("canvas");
+    //获取画布的上下文
+    var context = canvas.getContext("2d");
+    //获取浏览器屏幕的宽度和高度
+    var W = window.innerWidth;
+    var H = window.innerHeight;
+    //设置canvas的宽度和高度
+    canvas.width = W;
+    canvas.height = H;
+    //每个文字的字体大小
+    var fontSize = 16;
+    //计算列
+    var colunms = Math.floor(W / fontSize);
+    //记录每列文字的y轴坐标
+    var drops = [];
+    //给每一个文字初始化一个起始点的位置
+    for (var i = 0; i < colunms; i++) {
+      drops.push(0);
+    }
+
+    //运动的文字
+    var str = "javascript html5 canvas";
+    //4:fillText(str,x,y);原理就是去更改y的坐标位置
+    //绘画的函数
+    function draw() {
+      context.fillStyle = "rgba(0,0,0,0.05)";
+      context.fillRect(0, 0, W, H);
+      //给字体设置样式
+      context.font = "700 " + fontSize + "px  微软雅黑";
+      //给字体添加颜色
+      context.fillStyle = "#0396DF"; //可以rgb,hsl, 标准色，十六进制颜色
+      //写入画布中
+      for (var i = 0; i < colunms; i++) {
+        var index = Math.floor(Math.random() * str.length);
+        var x = i * fontSize;
+        var y = drops[i] * fontSize;
+        context.fillText(str[index], x, y);
+        //如果要改变时间，肯定就是改变每次他的起点
+        if (y >= canvas.height && Math.random() > 0.99) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    function randColor() {
+      var r = Math.floor(Math.random() * 256);
+      var g = Math.floor(Math.random() * 256);
+      var b = Math.floor(Math.random() * 256);
+      return "rgb(" + r + "," + g + "," + b + ")";
+    }
+
+    draw();
+    setInterval(draw, 30);
+  };
+</script>
+<!-- 轮播图 -->
+<script>
+  var mySwiper = new Swiper('.swiper', {
+    // direction: '',
+    loop: true, // 循环模式选项
+    autoplay: true,
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // 如果需要滚动条
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })
+</script>
+<!-- 按钮点击扩散样式 -->
+<script>
+  const buttons = document.querySelectorAll('a');
+  buttons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      let x = e.clientX - e.target.offsetLeft;
+      let y = e.clientY - e.target.offsetTop;
+      let ripples = document.createElement('span');
+      ripples.style.left = x + 'px';
+      ripples.style.top = y + 'px';
+      this.appendChild(ripples)
+      setTimeout(() => {
+        ripples.remove()
+      }, 1000)
+    })
+  })
+</script>
+<script>
+  $(function() {
+
+    $('#filter').click(function() {
+      console.log('关闭关闭遮罩遮罩！！！！');
+
+      setTimeout(() => {
+        $('.filter').css('display', 'none');
+        $('#main').css('display', 'inline-block');
+      }, 1000);
+    })
+
+    function goToClassOne() {
+      location.href = "./pages/class1.html";
+    }
+
+    $('#goToClass1').click(async function() {
+      console.log('goToClass1被点击了！')
+      goToClassOne();
+    })
+  })
+</script>

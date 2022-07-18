@@ -1,0 +1,67 @@
+@keyframes span {
+  0% {
+    transform: scale(.9);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.filter_controller {
+  position: relative;
+  /* top: 520px; */
+  display: flex;
+  align-items: center;
+  padding: 25px 65px;
+  margin: 30px 40px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 28px;
+  letter-spacing: 10px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #00000092, #0396DF90, #00000092);
+  overflow: hidden;
+}
+
+.filter_controller img {
+  width: 24px;
+}
+
+.filter_controller:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.filter_controller span {
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: animate 1s linear infinite;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* flex-direction: column; */
+}
+
+.container .buttons {
+  /* margin-top: 40px; */
+  /* margin-left: 40px; */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-left: 60px;
+}
