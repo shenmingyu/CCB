@@ -554,245 +554,245 @@ $(function() {
         });
     }
 
-    function echart_4() {
-        // 基于准备好的dom，初始化echarts实例
-        let myChart = echarts.init(document.getElementById('chart_4'));
+    // function echart_4() {
+    //     // 基于准备好的dom，初始化echarts实例
+    //     let myChart = echarts.init(document.getElementById('chart_4'));
 
-        /*中间显示的数据*/
-        /*中间显示的数据*/
-        let myData = ['超速', 'SOS', '偏移', '其他']
-        let databeast = {
-            1: [38, 25, 26, 32]
-        }
-        let databeauty = {
-            1: [11, 38, 23, 30]
-        }
-        let timeLineData = [1]
+    //     /*中间显示的数据*/
+    //     /*中间显示的数据*/
+    //     let myData = ['超速', 'SOS', '偏移', '其他']
+    //     let databeast = {
+    //         1: [38, 25, 26, 32]
+    //     }
+    //     let databeauty = {
+    //         1: [11, 38, 23, 30]
+    //     }
+    //     let timeLineData = [1]
 
-        let option = {
-            baseOption: {
-                backgroundColor: 'transparent',
-                timeline: {
-                    show: false,
-                    top: 0,
-                    data: []
-                },
-                legend: {
-                    show: true,
-                    // align: 'center',
-                    left: '30%',
-                    top: 30,
-                    // data: ['行驶', '停车'],
-                    // itemWidth:16,
-                    // itemHeight:12,
-                    // // borderRadius: 0, // 统一设置四个角的圆角大小
-                    icon: 'rect',
-                    textStyle: {
-                        itemGap: 12, //图例每项之间的间隔
-                        color: [],
-                        fontStyle: 'normal',
-                        fontFamily: '微软雅黑',
-                        fontSize: 14,
-                    }
-                },
-                tooltip: {
-                    show: true,
-                    trigger: 'axis',
-                    formatter: '{b}<br/>{a}: {c}',
-                    axisPointer: {
-                        type: 'shadow'
-                    }
-                },
+    //     let option = {
+    //         baseOption: {
+    //             backgroundColor: 'transparent',
+    //             timeline: {
+    //                 show: false,
+    //                 top: 0,
+    //                 data: []
+    //             },
+    //             legend: {
+    //                 show: true,
+    //                 // align: 'center',
+    //                 left: '30%',
+    //                 // top: 30,
+    //                 // data: ['行驶', '停车'],
+    //                 // itemWidth:16,
+    //                 // itemHeight:12,
+    //                 // // borderRadius: 0, // 统一设置四个角的圆角大小
+    //                 icon: 'rect',
+    //                 textStyle: {
+    //                     itemGap: 12, //图例每项之间的间隔
+    //                     color: [],
+    //                     fontStyle: 'normal',
+    //                     fontFamily: '微软雅黑',
+    //                     fontSize: 14,
+    //                 }
+    //             },
+    //             tooltip: {
+    //                 show: true,
+    //                 trigger: 'axis',
+    //                 formatter: '{b}<br/>{a}: {c}',
+    //                 axisPointer: {
+    //                     type: 'shadow'
+    //                 }
+    //             },
 
-                grid: [{
-                    show: false,
-                    left: '8%',
-                    top: 60,
-                    bottom: 0,
-                    containLabel: true,
-                    width: '30%'
-                }, {
-                    show: false,
-                    left: '57%',
-                    top: 60,
-                    bottom: 0,
-                    width: '0%'
-                }, {
-                    show: false,
-                    right: '8%',
-                    top: 60,
-                    bottom: 0,
-                    containLabel: true,
-                    width: '30%'
-                }],
+    //             grid: [{
+    //                 show: false,
+    //                 left: '8%',
+    //                 top: 60,
+    //                 bottom: 0,
+    //                 containLabel: true,
+    //                 width: '30%'
+    //             }, {
+    //                 show: false,
+    //                 left: '57%',
+    //                 top: 60,
+    //                 bottom: 0,
+    //                 width: '0%'
+    //             }, {
+    //                 show: false,
+    //                 right: '8%',
+    //                 top: 60,
+    //                 bottom: 0,
+    //                 containLabel: true,
+    //                 width: '30%'
+    //             }],
 
-                xAxis: [{
-                    type: 'value',
-                    inverse: true,
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    position: 'top',
-                    axisLabel: {
-                        show: false
-                    },
-                    splitLine: {
-                        show: false
-                    }
-                }, {
-                    gridIndex: 1,
-                    show: false
-                }, {
-                    gridIndex: 2,
-                    nameTextStyle: {
-                        color: '#50afff',
-                        fontSize: 14
-                    },
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    position: 'top',
-                    axisLabel: {
-                        show: false
-                    },
-                    splitLine: {
-                        show: false
-                    }
-                }],
-                yAxis: [{
-                    type: 'category',
-                    inverse: true,
-                    position: 'right',
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        show: false
-                    },
-                    data: myData
-                }, {
-                    gridIndex: 1,
-                    type: 'category',
-                    inverse: true,
-                    position: 'left',
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        show: true,
-                        textStyle: {
-                            color: '#fff',
-                            fontSize: 14
-                        }
+    //             xAxis: [{
+    //                 type: 'value',
+    //                 inverse: true,
+    //                 axisLine: {
+    //                     show: false
+    //                 },
+    //                 axisTick: {
+    //                     show: false
+    //                 },
+    //                 position: 'top',
+    //                 axisLabel: {
+    //                     show: false
+    //                 },
+    //                 splitLine: {
+    //                     show: false
+    //                 }
+    //             }, {
+    //                 gridIndex: 1,
+    //                 show: false
+    //             }, {
+    //                 gridIndex: 2,
+    //                 nameTextStyle: {
+    //                     color: '#50afff',
+    //                     fontSize: 14
+    //                 },
+    //                 axisLine: {
+    //                     show: false
+    //                 },
+    //                 axisTick: {
+    //                     show: false
+    //                 },
+    //                 position: 'top',
+    //                 axisLabel: {
+    //                     show: false
+    //                 },
+    //                 splitLine: {
+    //                     show: false
+    //                 }
+    //             }],
+    //             yAxis: [{
+    //                 type: 'category',
+    //                 inverse: true,
+    //                 position: 'right',
+    //                 axisLine: {
+    //                     show: false
+    //                 },
+    //                 axisTick: {
+    //                     show: false
+    //                 },
+    //                 axisLabel: {
+    //                     show: false
+    //                 },
+    //                 data: myData
+    //             }, {
+    //                 gridIndex: 1,
+    //                 type: 'category',
+    //                 inverse: true,
+    //                 position: 'left',
+    //                 axisLine: {
+    //                     show: false
+    //                 },
+    //                 axisTick: {
+    //                     show: false
+    //                 },
+    //                 axisLabel: {
+    //                     show: true,
+    //                     textStyle: {
+    //                         color: '#fff',
+    //                         fontSize: 14
+    //                     }
 
-                    },
-                    data: myData.map(function(value) {
-                        return {
-                            value: value,
-                            textStyle: {
-                                align: 'center'
-                            }
-                        }
-                    })
-                }, {
-                    gridIndex: 2,
-                    type: 'category',
-                    inverse: true,
-                    position: 'left',
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        show: false
+    //                 },
+    //                 data: myData.map(function(value) {
+    //                     return {
+    //                         value: value,
+    //                         textStyle: {
+    //                             align: 'center'
+    //                         }
+    //                     }
+    //                 })
+    //             }, {
+    //                 gridIndex: 2,
+    //                 type: 'category',
+    //                 inverse: true,
+    //                 position: 'left',
+    //                 axisLine: {
+    //                     show: false
+    //                 },
+    //                 axisTick: {
+    //                     show: false
+    //                 },
+    //                 axisLabel: {
+    //                     show: false
 
-                    },
-                    data: myData
-                }],
-                series: [
+    //                 },
+    //                 data: myData
+    //             }],
+    //             series: [
 
-                ]
+    //             ]
 
-            },
-            options: []
-        }
+    //         },
+    //         options: []
+    //     }
 
-        option.baseOption.timeline.data.push(timeLineData[0])
-        option.options.push({
-            tooltip: {
-                trigger: 'axis',
-                formatter: '{b}<br/>{c} {a}'
-            },
-            series: [{
-                name: '昨天',
-                type: 'bar',
-                barWidth: 17,
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'left',
-                        offset: [0, 0],
-                        textStyle: {
-                            color: '#fff',
-                            fontSize: 14
-                        }
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: '#0035f9',
-                        // barBorderRadius: 50
-                    }
-                },
+    //     option.baseOption.timeline.data.push(timeLineData[0])
+    //     option.options.push({
+    //         tooltip: {
+    //             trigger: 'axis',
+    //             formatter: '{b}<br/>{c} {a}'
+    //         },
+    //         series: [{
+    //             name: '昨天',
+    //             type: 'bar',
+    //             barWidth: 17,
+    //             label: {
+    //                 normal: {
+    //                     show: true,
+    //                     position: 'left',
+    //                     offset: [0, 0],
+    //                     textStyle: {
+    //                         color: '#fff',
+    //                         fontSize: 14
+    //                     }
+    //                 }
+    //             },
+    //             itemStyle: {
+    //                 normal: {
+    //                     color: '#0035f9',
+    //                     // barBorderRadius: 50
+    //                 }
+    //             },
 
-                data: databeast[timeLineData[0]]
-            }, {
-                name: '今天',
-                type: 'bar',
-                barWidth: 18,
-                xAxisIndex: 2,
-                yAxisIndex: 2,
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'right',
-                        offset: [0, 0],
-                        textStyle: {
-                            color: '#fff',
-                            fontSize: 14
-                        }
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: '#25f3e6',
-                        // barBorderRadius: 50
-                    }
-                },
-                data: databeauty[timeLineData[0]]
-            }]
-        })
+    //             data: databeast[timeLineData[0]]
+    //         }, {
+    //             name: '今天',
+    //             type: 'bar',
+    //             barWidth: 18,
+    //             xAxisIndex: 2,
+    //             yAxisIndex: 2,
+    //             label: {
+    //                 normal: {
+    //                     show: true,
+    //                     position: 'right',
+    //                     offset: [0, 0],
+    //                     textStyle: {
+    //                         color: '#fff',
+    //                         fontSize: 14
+    //                     }
+    //                 }
+    //             },
+    //             itemStyle: {
+    //                 normal: {
+    //                     color: '#25f3e6',
+    //                     // barBorderRadius: 50
+    //                 }
+    //             },
+    //             data: databeauty[timeLineData[0]]
+    //         }]
+    //     })
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        window.addEventListener("resize", function() {
-            myChart.resize();
-        });
+    //     // 使用刚指定的配置项和数据显示图表。
+    //     myChart.setOption(option);
+    //     window.addEventListener("resize", function() {
+    //         myChart.resize();
+    //     });
 
-    }
+    // }
 
 })

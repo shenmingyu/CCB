@@ -68,7 +68,7 @@ body {
               font-family: 'yjsz';
               color: #00d8ff;
               text-decoration: 0 0 25px #00d8ff;
-              font-size: 24px;
+              font-size: 28px;
             }
           }
         }
@@ -80,10 +80,12 @@ body {
       justify-content: space-evenly;
       align-items: center;
       width: 100%;
-      flex: 1;
+      height: calc(100vh - 100px);
       margin-top: 20px;
 
       .data_left {
+        margin-left: 50px;
+
         .left_top {
           width: 400px;
           height: 100%;
@@ -95,7 +97,8 @@ body {
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        width: 100%;
+        width: calc(100vw - 900px);
+
         height: 100%;
 
         .map {
@@ -107,8 +110,10 @@ body {
         .data_c_1 {
           width: 100%;
           height: 100%;
+          position: relative;
 
           .contPar {
+            position: relative;
             width: 100%;
             height: 100%;
 
@@ -117,13 +122,50 @@ body {
               flex-direction: column;
               align-items: center;
               justify-content: center;
-              margin-top: -80px;
+              position: relative;
+              // margin-top: -80px;
               width: 100%;
               height: 100%;
 
+              .img3 {
+                position: relative;
+                top: 0;
+                left: 50%;
+                margin-top: -80px;
+                height: 600px;
+                width: 500px;
+                transform: translate(-50%, 2%);
+              }
+
+              .biaoti {
+                top: 0;
+                // left: 0;
+                color: #00d8ff;
+                text-shadow: 0 0 25px #00d8ff;
+                position: absolute;
+                font-size: 44px;
+                margin: 0;
+              }
+
+              .kouhao {
+                color: #FFFFFF;
+                position: absolute;
+                font-size: 24px;
+                top: 70px;
+              }
+
+              #spin-container {
+                // position: absolute;
+              }
+
+              #drag-container {
+                position: absolute;
+
+              }
+
               #drag-container,
               #spin-container {
-                position: absolute;
+                // position: absolute;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -154,8 +196,8 @@ body {
                 p {
                   font-family: Serif;
                   position: absolute;
-                  top: 100%;
-                  left: 50%;
+                  // top: 100%;
+                  // left: 50%;
                   transform: translate(-50%, -50%) rotateX(90deg);
                   color: #fff;
                 }
@@ -173,6 +215,9 @@ body {
         align-items: center;
         width: 400px !important;
         height: 100%;
+        margin-right: 50px;
+        margin-top: -160px;
+
 
         .right_content {
           #chart_3 {
@@ -268,7 +313,7 @@ body {
 /*左边第二部分*/
 .data_content .data_left .left_top .top_bottom {
   width: 100%;
-  height: calc(40% - 20px);
+  height: calc(35% - 20px);
   border: 1px solid #20558b;
   position: relative;
   margin-bottom: 35px;
@@ -294,7 +339,7 @@ body {
   // height: calc(70% - 15px);
   position: relative;
   margin-bottom: 35px;
-  margin-left: 25px;
+  // margin-left: 25px;
 }
 
 .data_content .data_c .data_c_1 .dzimg {
@@ -329,7 +374,7 @@ body {
 
 .data_content .data_right .right_top {
   width: 100%;
-  height: calc(60% - 20px);
+  // height: calc(60% - 20px);
 }
 
 .data_content .data_right .right_top .right_info {
@@ -404,7 +449,7 @@ body {
 }
 
 .fontInner span {
-  display: inline-block;
+  // display: inline-block;
   /*float: left;*/
   /*height: 20px;*/
   width: 31%;
@@ -416,7 +461,7 @@ body {
 
 .data_content .data_right .right_top .right_content {
   width: 100%;
-  height: calc(50% - 20px);
+  height: calc(40% - 20px);
   border: 1px solid #20558b;
   position: relative;
   margin-bottom: 35px;
@@ -424,7 +469,7 @@ body {
 
 .data_content .data_right .right_top .right_bottom {
   width: 100%;
-  height: calc(50% - 20px);
+  height: calc(40% - 20px);
   border: 1px solid #20558b;
   position: relative;
   margin-bottom: 20px;
