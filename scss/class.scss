@@ -448,6 +448,12 @@ body {
   cursor: pointer;
 }
 
+.fontInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .fontInner span {
   // display: inline-block;
   /*float: left;*/
